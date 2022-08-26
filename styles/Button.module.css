@@ -1,0 +1,23 @@
+.button {
+	width: 80vw;
+	height: 50px;
+	background-color: #e6e8e8;
+	border: 1px solid #e6e8e8;
+	border-radius: 20px;
+	color: #000;
+	font-size: 20px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+	font-family: 'Ruda', sans-serif;
+}  
+
+.button:hover {
+	filter: brightness(1.05);
+	transform: scale(1.03);
+}
+
+.button:active {
+	filter: brightness(1.05);
+	transform: scale(0.98);
+}
