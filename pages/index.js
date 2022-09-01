@@ -14,11 +14,11 @@ export default function Index () {
 
 	return (
 		<div>
-			{loading? 
+			{/* {loading? 
 				<Loading /> 
 				: <Home />
-			}
-			{/* <Question /> */}
+			} */}
+			<Question />
 		</div>
 	);
 }
