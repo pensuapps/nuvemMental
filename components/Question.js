@@ -2,22 +2,33 @@ import { useState } from 'react';
 import styles from '../styles/Question.module.css';
 import Button from './Button';
 import Head from 'next/head';
-import question from "../src/questions.json"
+import { questions } from "../src/questions.js"
 
 export default function Question () {
-	const [counter, setCounter] = useState(0);
+	const [counterYes, setCounterYes] = useState(0);
+	const [counterNo, setCounterNo] = useState(0);
+	const [question, setQuestion] = useState(0);
 
 	const handleYesClick = () => {
-		setCounter(counter + 1);
-		counter === 8? counter = 20 : null;
+		setCounterYes(counterYes + 1);
+		if (counterYes === 8) 
+		handleEndQuestions(counterYes);
+		nextQuestion();
 	}
-
+	
 	const handleNoClick = () => {
-		null;
+		setCounterNo(counterNo + 1);
+		nextQuestion();
+	}
+	
+	const nextQuestion = () => {
+		setQuestion(question+1);
+		if (question === 20)
+			handleEndQuestions(question);
 	}
 
-	const next = () => {
-		null;
+	const handleEndQuestions = (num) => {
+		num === 8? <Bad/> : <Good/>;
 	}
 
 	return (
@@ -28,12 +39,26 @@ export default function Question () {
 			</Head>
 			<main>
 				<div className={styles.main}>
-					<h3 className={styles.h3}>TESTE</h3>
-				
-					<Button onClick={handleYesClick} title={"Sim"}/>
-				
-					<Button onClick={handleNoClick} title={'Não'}/>
-					<h3>{counter}</h3>
+					{questions.map(query => {
+						return(
+							<>
+								<h3 className={styles.h3}>
+									{query.title}
+								</h3>
+							
+								<Button onClick={handleYesClick} title={query.options[0]}/>
+							
+								<Button onClick={handleNoClick} title={query.options[1]}/>
+								<p>
+									{question}
+									<br/>
+									{counterYes}
+									<br/>
+									{counterNo}
+								</p>
+							</>
+						);
+					})}
 				</div>
 			</main>
 		</div>
