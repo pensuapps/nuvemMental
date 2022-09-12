@@ -1,8 +1,6 @@
 import Loading from '../src/Loading';
-import Home from '../src/Home';
-import Stats from '../components/Stats';
+import Home from './Home';
 import { useState, useEffect } from 'react';
-import Question from '../components/Question';
 
 export default function Index () {
 	const [ loading, setLoading ] = useState(true);
@@ -14,11 +12,10 @@ export default function Index () {
 
 	return (
 		<div>
-			{/* {loading? 
+			{loading? 
 				<Loading /> 
 				: <Home />
-			} */}
-			<Question />
+			}
 		</div>
 	);
 }

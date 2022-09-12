@@ -1,10 +1,8 @@
-import { useEffect, useState } from "react";
 import Image from 'next/image';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import Button from '../components/Button';
-import { useRouter } from 'next/router';
-import Question from "../components/Question";
+import Link from "next/link"
 
 export default function Home () {
 	return (
@@ -15,7 +13,6 @@ export default function Home () {
 			</Head>
 
 			<main className={styles.main}>
-
 				<Image src="/brainfog-logo.png" height="150" width="150"/>
 				<h1 className={styles.h1}>
 					Bem vindo ao Brain Fog!
@@ -32,7 +29,9 @@ export default function Home () {
 				<p className={styles.description}>
 					Vamos começar? É bem simples e rápido!
 				</p>
-				<Button onClick={() => null} title={'Clique aqui para começar'}/>
+				<Link href="/Question">
+					<Button title={'Clique aqui para começar'}/>
+				</Link>
 			</main>
 		</div>
 	);

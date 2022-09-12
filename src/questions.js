@@ -65,8 +65,8 @@ export const questions = [
 	{
 		"title": "Sua capacidade de fazer tarefas em equipe como está?",
 		"options": [
-			"Boa, me saio bem", 
-			"Ruim, difícil me organizar com o grupo"
+			"Ruim, difícil me organizar com o grupo",
+			"Boa, me saio bem"
 		]
 	},
 	{
