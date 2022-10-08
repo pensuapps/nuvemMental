@@ -3,14 +3,17 @@ import Good from "../components/Good.js"
 import Button from "../components/Button.js"
 import Head from 'next/head';
 import Link from "next/link"
+import { useRouter } from 'next/router'
 
 import styles from "../styles/Result.module.css";
 
 export default function Result() {
-	const url_string = window.location.href;
-	const url = new URL(url_string);
-	const result = url.searchParams.get("num");
+	// const url_string = window.location.href;
+	// const url = new URL(url_string);
+	// const result = url.searchParams.get("num");
+	const { query } = useRouter()
 
+	const result = query.num
 	return (
 		<div className={styles.container}>
 			<Head>

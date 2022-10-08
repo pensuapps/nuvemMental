@@ -9,11 +9,11 @@ export default function Home () {
 		<div className={styles.container}>
 			<Head>
 				<title>Brain Fog - Home</title>
-				<link rel="icon" href="/brainfog-logo.png" />
+				<link rel="icon" href="/brainfog-logo.png" alt="" />
 			</Head>
 
 			<main className={styles.main}>
-				<Image src="/brainfog-logo.png" height="150" width="150"/>
+				<Image src="/brainfog-logo.png" height="192" width="192" alt="Brain Fog logo app" />
 				<h1 className={styles.h1}>
 					Bem vindo ao Brain Fog!
 				</h1>
@@ -25,7 +25,7 @@ export default function Home () {
 				</p>
 					
 				<p className={styles.description}>
-					Podemos te ajudar a identificar sinais e sintomas de "Nuvem Mental", e te ajudar em práticas de saúde que podem incrementar sua qualidade de vida. </p>
+					Podemos te ajudar a identificar sinais e sintomas de Nuvem Mental, e te ajudar em práticas de saúde que podem incrementar sua qualidade de vida. </p>
 				<p className={styles.description}>
 					Vamos começar? É bem simples e rápido!
 				</p>

@@ -54,17 +54,8 @@ export default function Question() {
 			<main className={styles.main}>
 					{!showResult ? <>
 						<h3>{questions[question].title}</h3>
-						{/* <p>
-							{counterYes}
-							<br />
-							{counterNo}
-							<br />
-							{question}
-							<br/>
-							{Object.keys(questions).length}
-						</p> */}
 						{questions[question].options.map((label, i) => 
-							<Button onClick={() => handleClickOption(i)} title={label} />)
+							<Button key={i} onClick={() => handleClickOption(i)} title={label} />)
 						}
 					</> : handleEndQuestions(counterYes)
 					}
