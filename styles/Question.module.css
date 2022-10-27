@@ -58,6 +58,12 @@
 	font-family: 'Ruda', sans-serif;
 }
 
+.image {
+	position: absolute;
+	margin-bottom: 15px;
+	align-items: center;
+}
+
 @media (max-width: 600px) {
 	.grid {
 		width: 100%;

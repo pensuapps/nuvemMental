@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styles from '../styles/Question.module.css';
 import Button from '../components/Button';
+import Image from 'next/image';
 import Head from 'next/head';
 import { useRouter } from "next/router"
 import { questions } from "../src/questions.js"
@@ -53,6 +54,7 @@ export default function Question() {
 			</Head>
 			<main className={styles.main}>
 					{!showResult ? <>
+						<Image src={questions[question].image} height="150" width="150" className={styles.image}/>
 						<h3>{questions[question].title}</h3>
 						{questions[question].options.map((label, i) => 
 							<Button key={i} onClick={() => handleClickOption(i)} title={label} />)

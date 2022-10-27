@@ -21,7 +21,7 @@ export default function Home () {
 					Seu app sobre Nuvem Mental
 				</h3>
 				<p className={styles.description}>
-					Você contraiu COVID, tem percebido confusão mental, falta de foco, problemas de memória e menor clareza de raciocínio? 
+					Você contraiu covid, tem percebido confusão mental, falta de foco, problemas de memória e menor clareza de raciocínio? 
 				</p>
 					
 				<p className={styles.description}>
