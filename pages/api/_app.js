@@ -1,14 +1,22 @@
-import Document, { Html, Head, Main, NextScript } from "next/document";
-import '../..styles/globals.css'
-import { useEffect } from "react"
+import Script from "next/script";
+
 function MyApp({ Component, pageProps }) {
   return (
-    <Document>
-      <Head>
-        <link rel="manifest" href="/manifest.json" />
-      </Head>
+    <>
+      <Script id="analytics" strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-NH96L9TSD8">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-NH96L9TSD8');
+            page_path: window.location.pathname,
+          });
+          `}
+        </Script>
+
       <Component {...pageProps} />
-    </Document>
+    </>
   );
 }
 
