@@ -3,6 +3,7 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import Button from '../components/Button';
 import Link from "next/link"
+import { event } from '../lib/ga';
 
 export default function Home () {
 	return (
@@ -30,7 +31,14 @@ export default function Home () {
 					Vamos começar? É bem simples e rápido!
 				</p>
 				<Link href="/Question">
-					<Button title={'Clique aqui para começar'}/>
+					<Button title={'Clique aqui para começar'} onClick={() => {
+						event({
+							action: 'start',
+							category: 'Start',
+							label: 'Clique aqui para começar',
+							value: 'Clique aqui para começar'
+						})
+					}}/>
 				</Link>
 			</main>
 		</div>

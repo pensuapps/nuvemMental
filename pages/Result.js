@@ -4,7 +4,7 @@ import Button from "../components/Button.js"
 import Head from 'next/head';
 import Link from "next/link"
 import { useRouter } from 'next/router'
-
+import { event } from '../lib/ga';
 import styles from "../styles/Result.module.css";
 
 export default function Result() {
@@ -24,11 +24,25 @@ export default function Result() {
 				<h1>Resultado</h1>
 				{result == 8 ? <Bad /> : <Good />}
 				<Link href="/Tips">
-					<Button title="Sim" />
+					<Button title="Sim" onClick={() => {
+						event({
+							action: 'tips_button_click',
+							category: 'Tips',
+							label: 'Ir para dicas',
+							value: 'Ir para dicas'
+						})
+					}}/>
 				</Link>
 				
 				<Link href="/">
-					<Button title="Não" />
+					<Button title="Não" onClick={() => {
+						event({
+							action: 'result_to_home_button_click',
+							category: 'Home',
+							label: 'Voltar ao início',
+							value: 'Voltar ao início'
+						})
+					}}/>
 				</Link>
 			</main>
 		</div>

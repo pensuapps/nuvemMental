@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Head from 'next/head';
 import { useRouter } from "next/router"
 import { questions } from "../src/questions.js"
+import { event } from '../lib/ga';
 
 export default function Question() {
 	const [counterYes, setCounterYes] = useState(0);
@@ -19,6 +20,12 @@ export default function Question() {
 
 	const handleYesClick = () => {
 		setCounterYes(++counterYes);
+		event({
+			action: 'question_yes_click',
+			category: 'Question',
+			label: 'Clique em sim',
+			value: 'Clique em sim'
+		})
 		if (counterYes === 8){
 			setShowResult(counterYes);
 		} else {
@@ -28,6 +35,12 @@ export default function Question() {
 
 	const handleNoClick = () => {
 		setCounterNo(counterNo + 1);
+		event({
+			action: 'question_no_click',
+			category: 'Question',
+			label: 'Clique em não',
+			value: 'Clique em não'
+		})
 		nextQuestion();
 	}
 

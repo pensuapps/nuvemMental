@@ -1,6 +1,7 @@
 import Button from "../components/Button.js"
 import Head from 'next/head';
 import Link from "next/link"
+import { event } from '../lib/ga';
 
 import styles from "../styles/Tips.module.css";
 
@@ -26,11 +27,25 @@ export default function Tips() {
 				</p>
 
 				<Link href="https://pebmed.com.br/brain-fog-no-pos-covid-19-uma-epidemia/">
-					<Button title="Ver mais sobre Núvem Mental"/>
+					<Button title="Ver mais sobre Nuvem Mental" onClick={() => {
+						event({
+							action: 'more_tips_button_click',
+							category: 'Tips',
+							label: 'Dicas',
+							value: 'Dicas'
+						})
+					}}/>
 				</Link>
 
 				<Link href="/">
-					<Button title="Voltar ao início" />
+					<Button title="Voltar ao início" onClick={() => {
+						event({
+							action: 'tips_to_home_button_click',
+							category: 'Home',
+							label: 'Voltar ao início',
+							value: 'Voltar ao início'
+						})
+					}}/>
 				</Link>
 			</main>
 		</div>

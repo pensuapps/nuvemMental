@@ -1,9 +1,9 @@
 import Script from "next/script";
-import "../../styles/globals.css";
+import "../styles/globals.css";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 
-import * as ga from "../../lib/google-analytics";
+import * as ga from "../lib/ga.js";
 
 function MyApp({ Component, pageProps }) {
 	const router = useRouter();
@@ -21,20 +21,6 @@ function MyApp({ Component, pageProps }) {
 
 	return (
 		<>
-			<Script strategy="lazyOnload" src={`"https://www.googletagmanager.com/gtag/js?id=G-Q67MYCWE50`}/>
-
-			<Script id="google-analytics-script" strategy="lazyOnload">
-				{`
-					window.dataLayer = window.dataLayer || [];
-					function gtag(){dataLayer.push(arguments);}
-					gtag('js', new Date());
-
-					gtag('config', 'G-Q67MYCWE50');
-					page_path: window.location.pathname,
-				});
-			`}
-			</Script>
-
 			<Component {...pageProps} />
 		</>
 	);
