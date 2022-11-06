@@ -9,8 +9,8 @@ class MyDocument extends Document {
 					<link rel="manifest" href="/manifest.json"/>
 					<link rel="apple-touch-icon" href="/brainfog-logo.png"></link>
 
-					<Script async src="https://www.googletagmanager.com/gtag/js?id=G-Q67MYCWE50"></Script>
-					<Script dangerouslySetInnerHTML={{
+					<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q67MYCWE50"></script>
+					<script dangerouslySetInnerHTML={{
 							__html: `
 								window.dataLayer = window.dataLayer || [];
 								function gtag(){dataLayer.push(arguments);}
