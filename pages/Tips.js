@@ -1,9 +1,10 @@
-import Button from "../components/Button.js"
 import Head from 'next/head';
-import Link from "next/link"
-import { event } from '../lib/ga';
+import Link from 'next/link';
 
-import styles from "../styles/Tips.module.css";
+import styles from '../styles/Tips.module.css';
+
+import Button from '../components/Button.js';
+import { event } from '../lib/ga';
 
 export default function Tips() {
 	return (

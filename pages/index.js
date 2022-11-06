@@ -1,7 +1,6 @@
 import Loading from '../src/Loading';
 import Home from './Home';
 import { useState, useEffect } from 'react';
-import { event } from '../lib/ga';
 
 export default function Index () {
 	const [ loading, setLoading ] = useState(true);

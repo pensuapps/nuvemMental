@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
-import style from "../styles/Loading.module.css";
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Head from 'next/head';
+
+import style from '../styles/Loading.module.css';
 
 const MIN_OPACITY = 75;
 const MAX_OPACITY = 100;

@@ -1,21 +1,22 @@
-import Script from "next/script";
-import "../styles/globals.css";
-import { useEffect } from "react";
-import { useRouter } from "next/router";
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 
-import * as ga from "../lib/ga.js";
+import '../styles/globals.css';
+
+import { pageView } from '../lib/ga.js';
+
 
 function MyApp({ Component, pageProps }) {
 	const router = useRouter();
 
 	useEffect(() => {
 		const handleRouteChange = (url) => {
-			ga.pageView(url);
+			pageView(url);
 		};
 
-		router.events.on("routeChangeComplete", handleRouteChange);
+		router.events.on('routeChangeComplete', handleRouteChange);
 		return () => {
-			router.events.off("routeChangeComplete", handleRouteChange);
+			router.events.off('routeChangeComplete', handleRouteChange);
 		};
 	}, [router.events]);
 
@@ -26,4 +27,4 @@ function MyApp({ Component, pageProps }) {
 	);
 }
 
-export default MyApp
+export default MyApp;

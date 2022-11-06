@@ -1,21 +1,23 @@
 import { useState } from 'react';
-import styles from '../styles/Question.module.css';
-import Button from '../components/Button';
 import Image from 'next/image';
 import Head from 'next/head';
-import { useRouter } from "next/router"
-import { questions } from "../src/questions.js"
+import { useRouter } from "next/router";
+
+import styles from '../styles/Question.module.css';
+
+import Button from '../components/Button';
+import { questions } from '../src/questions.js';
 import { event } from '../lib/ga';
 
 export default function Question() {
 	const [counterYes, setCounterYes] = useState(0);
 	const [counterNo, setCounterNo] = useState(0);
 	const [question, setQuestion] = useState(0);
-	const [showResult, setShowResult] = useState(false)
-	const router = useRouter()
+	const [showResult, setShowResult] = useState(false);
+	const router = useRouter();
 
 	const handleClickOption = (optionIndex) => {
-		optionIndex === 0 ? handleYesClick() : handleNoClick()
+		optionIndex === 0 ? handleYesClick() : handleNoClick();
 	}
 
 	const handleYesClick = () => {
@@ -25,7 +27,7 @@ export default function Question() {
 			category: 'Question',
 			label: 'Clique em sim',
 			value: 'Clique em sim'
-		})
+		});
 		if (counterYes === 8){
 			setShowResult(counterYes);
 		} else {
@@ -40,7 +42,7 @@ export default function Question() {
 			category: 'Question',
 			label: 'Clique em não',
 			value: 'Clique em não'
-		})
+		});
 		nextQuestion();
 	}
 
@@ -54,7 +56,7 @@ export default function Question() {
 
 	const handleEndQuestions = (num) => {
 		router.push({
-			pathname: "/Result",
+			pathname: '/Result',
 			query: { num }
 		});
 	}

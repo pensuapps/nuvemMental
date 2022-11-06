@@ -1,8 +1,10 @@
 import Image from 'next/image';
 import Head from 'next/head';
+import Link from 'next/link'
+
 import styles from '../styles/Home.module.css';
+
 import Button from '../components/Button';
-import Link from "next/link"
 import { event } from '../lib/ga';
 
 export default function Home () {
