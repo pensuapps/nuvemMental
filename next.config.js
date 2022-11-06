@@ -13,10 +13,10 @@ const withPWA = require('next-pwa')({
 })
 
 module.exports = withPWA({
-	// next.js config
-	experimental: {
-		images: {
-			unoptimized: true,
-		},
+	reactStrictMode: true,
+	pwa: {
+		dest: 'public',
+		register: true,
+		skipWaiting: true,
 	},
 })
