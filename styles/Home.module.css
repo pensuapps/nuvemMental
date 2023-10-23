@@ -1,57 +1,66 @@
 @import url('https://fonts.googleapis.com/css?family=Ruda');
 
 .container {
-  padding: 0;
-  border: 0;
-  margin: 0px 0px 0px 0px;
-  margin-top: 0;
-	margin-right: 0;
-	margin-bottom: 0;
-	margin-left: 0;
-  left: 0;
-	top: 0;
-	right: 0;
-	bottom: 0;
-  position: fixed;
-  width: 100%;
-  height: 100%;
+  padding-inline: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100svh;
   background-color: #d6d6d6;
 }
 
 .main {
-  padding: 0px 0px 0px 0px;
-  width: 100vh;
-  height: 100vh;
+  height: 100%;
   display: flex;  
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #d6d6d6;
   font-family: 'Ruda', sans-serif;
 }
 
+@media(min-width: 600px) {
+  .main {
+    max-width: 760px;
+  }
+}
 .main h1 {
-  font-weight: 80vw;
-  color: #000;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  color: #E8755D;
+  text-align: center;
+  text-wrap: balance;
 }
 
 .main h3 {
-  font-weight: 60vw;
-  color: #000;
+  margin: 0 0 1rem;
+  font-size: 1.25rem;
+  color: #E88E5D;
 }
 
 .main p {
+  font-size: 1rem;
   margin-left: 10%;
   margin-right: 10%;
+  margin-block-start: 0;
+  margin-block-end: 1rem;
+  color: hsl(10, 75%, 25%);
 }
+
 .description {
   text-align: center;
   font-size: medium;
   display: flex;
   font-family: 'Ruda', sans-serif;
+}
+
+@media (min-width: 600px){
+  .main h1 {
+    font-size: 2rem;
+  }
+
+  .main h3 {
+    font-size: 1.5rem;
+  }
 }
 
 @media (max-width: 600px) {
