@@ -37,7 +37,7 @@ export default function Home() {
           min-height="192"
           alt="Brain Fog logo app"
         />
-        <h1 className={styles.h1}>Bem vindo ao Brain Fog!</h1>
+        <h1 className={styles.h1}>Bem-vindo ao Brain Fog!</h1>
         <h3 className={styles.h3}>Seu app sobre Nuvem Mental</h3>
         <p className={styles.description}>
           Você contraiu covid, tem percebido confusão mental, falta de foco,
