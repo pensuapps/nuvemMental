@@ -16,6 +16,7 @@
 	align-items: center;
 	background-color: #d6d6d6;
 	font-family: 'Ruda', sans-serif;
+	margin: auto;
 }
 
 @media(min-width: 600px) {
