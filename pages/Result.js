@@ -32,7 +32,7 @@ export default function Result() {
         <link rel="icon" href="/brainfog-logo.png" />
       </Head>
       <main className={styles.main}>
-        <h1>Resultado</h1>
+        <h1>Resultado:</h1>
         {result == 8 ? <Bad /> : <Good />}
         <Link href="/Tips">
           <Button
